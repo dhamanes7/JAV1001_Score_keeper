@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textAlignment="center"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/team1"
+        android:layout_width="0dp"
+        android:layout_height="89dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="48dp"
+        android:text="New York Knicks"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/team2"
+        app:layout_constraintEnd_toStartOf="@+id/team2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/team2"
+        android:layout_width="0dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="31dp"
+        android:text="Chicago Bulls"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/team1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/team1Score"
+        android:layout_width="156dp"
+        android:layout_height="61dp"
+        android:autoText="false"
+
+
+        android:clickable="false"
+        android:contextClickable="false"
+        android:editable="false"
+        android:inputType="number"
+        android:text="0"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textStyle="bold"
+        app:guidelineUseRtl="false"
+        app:layout_constraintBottom_toBottomOf="@+id/team2Score"
+        app:layout_constraintEnd_toEndOf="@+id/team1"
+        app:layout_constraintStart_toStartOf="@+id/team1"
+        app:layout_constraintTop_toTopOf="@+id/team2Score" />
+
+    <TextView
+        android:id="@+id/team2Score"
+        android:layout_width="156dp"
+        android:layout_height="61dp"
+        android:layout_marginStart="49dp"
+        android:layout_marginTop="53dp"
+        android:text="0"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/team1Score"
+        app:layout_constraintTop_toBottomOf="@+id/team2" />
+
+    <Button
+        android:id="@+id/scoreIncrease"
+        android:layout_width="106dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="48dp"
+        android:text="+"
+        android:onClick="scoreIncrease"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        app:layout_constraintBottom_toBottomOf="@+id/scoreDecrease"
+        app:layout_constraintEnd_toEndOf="@+id/team1Score"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/team1Score"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/knicks"
+        android:layout_width="57dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="80dp"
+        android:text="Knicks"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textIsSelectable="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/teamToggle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/teamToggle"
+        app:layout_constraintVertical_bias="0.857" />
+
+    <Switch
+        android:id="@+id/teamToggle"
+        android:layout_width="50dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="208dp"
+        android:checked="false"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:switchTextAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scoreDecrease" />
+
+    <TextView
+        android:id="@+id/bulls"
+        android:layout_width="43dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="34dp"
+        android:layout_marginEnd="57dp"
+        android:text="Bulls"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/teamToggle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.269"
+        app:layout_constraintStart_toEndOf="@+id/teamToggle"
+        app:layout_constraintTop_toTopOf="@+id/teamToggle"
+        app:layout_constraintVertical_bias="0.857" />
+
+    <Button
+        android:id="@+id/scoreDecrease"
+        android:layout_width="106dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="60dp"
+        android:onClick="scoreDecrease"
+        android:text="-"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/team2Score"
+        app:layout_constraintTop_toBottomOf="@+id/team2Score" />
+
+    <RadioGroup
+        android:id="@+id/scoreGroup"
+        android:layout_width="104dp"
+        android:layout_height="142dp"
+        android:layout_marginStart="156dp"
+        android:checkedButton="@+id/plus1"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="65dp"
+        app:layout_constraintBottom_toTopOf="@+id/teamToggle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scoreDecrease">
+
+        <RadioButton
+            android:id="@+id/plus1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="1" />
+
+        <RadioButton
+            android:id="@+id/plus2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2" />
+
+        <RadioButton
+            android:id="@+id/plus3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="3" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="271dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="61dp"
+        android:onClick="reset"
+        android:layout_marginTop="30dp"
+        android:text="Reset"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teamToggle" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
